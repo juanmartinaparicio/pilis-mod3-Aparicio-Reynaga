@@ -21,14 +21,14 @@ export default function ClimaContext({ children }) {
         localStorage.setItem('ubicacion', JSON.stringify(ubicaciones));
     }, [ubicaciones])
 
-    function agregarUbicacion(id, nombreUbi, lat, long, temp, viento) {
+    function agregarUbicacion(id, nombreUbi, lat, long, temp, velocidadViento) {
         const ubicacion = {
             id,
             nombreUbi,
             lat,
             long,
             temp,
-            viento
+            velocidadViento
         }
         setUbicaciones(...ubicaciones, ubicacion);
     }
