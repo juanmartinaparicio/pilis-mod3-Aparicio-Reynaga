@@ -5,7 +5,6 @@ import { useContext } from 'react'
 import { getClima } from '../api/apiClima'
 
 
-
 function UbicacionesForm() {
 
   const { agregarUbicacion } = useContext(myContext);
