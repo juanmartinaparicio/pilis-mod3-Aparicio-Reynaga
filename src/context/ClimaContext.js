@@ -1,16 +1,18 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { nanoid } from 'nanoid';
+
 
 //crear contexto
 export const myContext = createContext(null);
 
 export default function ClimaContext({ children }) {
-    const [ubicaciones, setUbicaciones] = useState([]);
+    const [ ubicaciones, setUbicaciones ] = useState([]);
 
     //*set LocalStorage
     useEffect(() => {
-        let getUbicacion = localStorage.getItem('ubicacion');
-        if (getUbicacion != null) {
-            setUbicaciones(JSON.parse(getUbicacion));
+        let getUbicaciones = localStorage.getItem('ubicacion');
+        if (getUbicaciones != null) {
+            setUbicaciones(JSON.parse(getUbicaciones));
         } else {
             setUbicaciones([]);
         }
@@ -21,16 +23,17 @@ export default function ClimaContext({ children }) {
         localStorage.setItem('ubicacion', JSON.stringify(ubicaciones));
     }, [ubicaciones])
 
-    function agregarUbicacion(id, nombreUbi, lat, long, temp, velocidadViento) {
-        const ubicacion = {
-            id,
-            nombreUbi,
-            lat,
-            long,
-            temp,
-            velocidadViento
-        }
-        setUbicaciones(...ubicaciones, ubicacion);
+    function agregarUbicacion(nombreUbi, latitud, longitud, temperatura, velocidadViento) {
+        const ubicacionNueva = {
+            id: nanoid(),
+            nombre: nombreUbi,
+            latitud: latitud,
+            longitud: longitud,
+            temperatura: temperatura,
+            velocidadViento: velocidadViento
+        };
+        setUbicaciones([ ...ubicaciones, ubicacionNueva]);
+        alert("Ubicacion Guardada")
     }
 
     function eliminarUbicacion(id) {

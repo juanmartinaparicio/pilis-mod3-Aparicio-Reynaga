@@ -1,23 +1,13 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import UbicacionesForm from '../UbicacionesForm';
+import UbicacionesList from '../UbicacionesList';
 
 function Navbar(props) {
-    return (
-        <BrowserRouter>
-          <Navbar/>
-          <Switch>
-            <Route path="/" exact>
-              <Home/>
-            </Route>
-            <Route path="/pokemons">
-              <Pokemons/>
-            </Route>
-            <Route path="/about">
-              <About/>
-            </Route>
-          </Switch>
-        </BrowserRouter>
-      );
+  return (
+    <div>
+    </div>
+  );
 }
 
 
