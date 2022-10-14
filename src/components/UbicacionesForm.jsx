@@ -21,7 +21,7 @@ function UbicacionesForm() {
   return (
     <div>
       <div id='img'>
-      <img src={logo} />
+        <img src={logo} />
       </div>
       <br />
       <div className="card">
@@ -34,6 +34,7 @@ function UbicacionesForm() {
               <input type="text"{...register('nombre', {
                 required: true,
               })} />
+              <br />
               {errors.nombre?.type === 'required' && <span>Debe ingresar un nombre para la Ubicacion</span>}
             </div>
             <br />
@@ -42,6 +43,7 @@ function UbicacionesForm() {
               <input type="number" step="0.00000000000001" {...register('latitud', {
                 required: true,
               })} />
+              <br />
               {errors.latitud?.type === 'required' && <span >Debe ingresar Latitud</span>}
             </div>
             <br />
@@ -50,6 +52,7 @@ function UbicacionesForm() {
               <input type="number" step="0.0000000000001" {...register('longitud', {
                 required: true,
               })} />
+              <br />
               {errors.longitud?.type === 'required' && <span>Debe ingresar Longitud</span>}
             </div>
             <br />
