@@ -1,12 +1,12 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
+import Cabecera from './components/Navbar/Cabecera';
 import Rutas from './routes/Rutas';
 
 function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Cabecera />
       <Rutas />
     </div>
   );

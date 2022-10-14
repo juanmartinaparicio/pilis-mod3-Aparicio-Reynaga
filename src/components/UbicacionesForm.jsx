@@ -10,7 +10,6 @@ function UbicacionesForm() {
   const { agregarUbicacion } = useContext(myContext);
   const { register, formState: { errors }, handleSubmit } = useForm();
 
-
   const cargarUbicacion = (ubicacion) => {
     getClima(ubicacion.latitud, ubicacion.longitud).then((res) => {
       agregarUbicacion(ubicacion.nombre, res.latitude, res.longitude, res.current_weather.temperature, res.current_weather.windspeed)
