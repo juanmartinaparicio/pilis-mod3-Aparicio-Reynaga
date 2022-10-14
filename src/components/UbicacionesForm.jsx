@@ -28,14 +28,14 @@ function UbicacionesForm() {
       </div>
       <div>
         <label>Latitud:</label>
-        <input type="number" step="0.1" {...register('latitud', {
+        <input type="number" step="0.00000000000001" {...register('latitud', {
           required: true,
         })} />
         {errors.latitud?.type === 'required' && <span >Debe ingresar Latitud</span>}
       </div>
       <div>
         <label>Longitud:</label>
-        <input type="number" step="0.1" {...register('longitud', {
+        <input type="number" step="0.0000000000001" {...register('longitud', {
           required: true,
         })} />
         {errors.longitud?.type === 'required' && <span>Debe ingresar Longitud</span>}

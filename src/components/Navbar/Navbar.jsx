@@ -1,13 +1,20 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import UbicacionesForm from '../UbicacionesForm';
-import UbicacionesList from '../UbicacionesList';
+import { Link, Router } from "react-router-dom";
+import './Navbar.css'
 
-function Navbar(props) {
+
+function Navbar() {
+  console.log("no muestra el navbar?")
+
   return (
     <div>
+      <ul>
+        <li><Link to = '/FormularioUbicaciones'></Link>Home</li>
+        <li><Link to = '/ListadoUbicaciones'></Link>Nueva Ubicacion</li>
+        <li>Listado de Ubicaciones</li>
+      </ul>
     </div>
-  );
+  )
 }
 
 
