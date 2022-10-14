@@ -8,29 +8,29 @@ function UbicacionesList() {
     const { ubicaciones, eliminarUbicacion } = useContext(myContext);
 
     return (
-        <div className="row">
+        <div className="row mt-4">
             {ubicaciones.map((ubicacion) => (
-                <Card key={ubicacion.id} style={{ width: '20rem' }}>
+                <Card key={ubicacion.id} style={{ width: '20rem',margin: '5px' }}>
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <Card.Title>Ubicacion</Card.Title>
                         <Card.Text>
-                            <span>Nombre : {ubicacion.nombre}</span>
+                            Nombre : {ubicacion.nombre}
                         </Card.Text>
                         <Card.Text>
-                            <span>Latitud : {ubicacion.latitud}</span>
+                            Latitud : {ubicacion.latitud}
                         </Card.Text>
                         <Card.Text>
-                            <span>Longitud : {ubicacion.longitud} </span>
+                            Longitud : {ubicacion.longitud}
                         </Card.Text>
                         <Card.Text>
-                            <span>Temperatura (°C) : {ubicacion.temperatura}</span>
+                            Temperatura (°C) : {ubicacion.temperatura}
                         </Card.Text>
                         <Card.Text>
-                            <span>Velocidad del Viento (m/h) : {ubicacion.velocidadViento}</span>
+                            Velocidad del Viento (m/h) : {ubicacion.velocidadViento}
                         </Card.Text>
                     </Card.Body>
-                    <button className='button1' onClick={() => eliminarUbicacion(ubicacion.id)}><BsTrash /></button>
+                    <button className='button1 btn btn-outline-danger' onClick={() => eliminarUbicacion(ubicacion.id)}><BsTrash /></button>
                 </Card>
             ))}
         </div>
